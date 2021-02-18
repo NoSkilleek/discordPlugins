@@ -11,7 +11,7 @@ module.exports = (_ => {
 		"info": {
 			"name": "WriteUpperCase",
 			"author": "NoSkill",
-			"version": "1.0.0",
+			"version": "1.0.1",
 			"description": "Piszesz tak jak z telefonu okej?!"
 		},
 		"changeLog": {
@@ -117,11 +117,6 @@ module.exports = (_ => {
 				}
 			}
 		
-			forceUpdateAll () {
-				settings = BDFDB.DataUtils.get(this, "settings");
-				
-				BDFDB.PatchUtils.forceAllUpdates(this);
-			}
 
 			processChannelEditorContainer (e) {
 				let type = BDFDB.LibraryModules.StringUtils.upperCaseFirstChar(e.instance.props.type || "");
