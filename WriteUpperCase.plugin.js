@@ -6,26 +6,31 @@
  * @updateUrl https://raw.githubusercontent.com/NoSkilleek/discordPlugins/main/WriteUpperCase.plugin.js
  */
 
+
+
 module.exports = (_ => {
 	const config = {
 		"info": {
 			"name": "WriteUpperCase",
 			"author": "NoSkill",
-			"version": "1.0.1",
+			"version": "1.0",
 			"description": "Piszesz tak jak z telefonu okej?!"
 		},
 		"changeLog": {
-			"improved": {
-				"Settings": "You can now disable/enable it form normal/edit/upload textareas"
+			"Dodano": {
+				"Ustawienia": "Mozesz włączać / wyłączać włączony plugin!"
 			}
 		}
+		
 	};
 
 	return !window.BDFDB_Global || (!window.BDFDB_Global.loaded && !window.BDFDB_Global.started) ? class {
 		getName () {return config.info.name;}
 		getAuthor () {return config.info.author;}
 		getVersion () {return config.info.version;}
-		getDescription () {return `The Library Plugin needed for ${config.info.name} is missing. Open the Plugin Settings to download it. \n\n${config.info.description}`;}
+		getDescription () {return config.info.description;}
+		
+		
 		
 		downloadLibrary () {
 			require("request").get("https://mwittrien.github.io/BetterDiscordAddons/Library/0BDFDB.plugin.js", (e, r, b) => {
@@ -63,6 +68,7 @@ module.exports = (_ => {
 		var settings = {};
 		
 		return class WriteUpperCase extends Plugin {
+
 			onLoad () {
 				this.defaults = {
 					settings: {
@@ -80,44 +86,19 @@ module.exports = (_ => {
 			}
 			
 			onStart () {
-				this.forceUpdateAll();
 			}
 			
 			onStop () {
-				this.forceUpdateAll();
 			}
 
-			getSettingsPanel (collapseStates = {}) {
-				let settingsPanel;
-				return settingsPanel = BDFDB.PluginUtils.createSettingsPanel(this, {
-					collapseStates: collapseStates,
-					children: _ => {
-						let settingsItems = [];
-						
-						settingsItems.push(BDFDB.ReactUtils.createElement(BDFDB.LibraryComponents.SettingsPanelList, {
-							title: "Automatically transform in:",
-							children: Object.keys(settings).map(key => BDFDB.ReactUtils.createElement(BDFDB.LibraryComponents.SettingsSaveItem, {
-								type: "Switch",
-								plugin: this,
-								keys: ["settings", key],
-								label: this.defaults.settings[key].description,
-								value: settings[key]
-							}))
-						}));
-						
-						return settingsItems;
-					}
-				});
-			}
 
 			onSettingsClosed () {
 				if (this.SettingsUpdated) {
 					delete this.SettingsUpdated;
-					this.forceUpdateAll();
 				}
 			}
 		
-
+		
 			processChannelEditorContainer (e) {
 				let type = BDFDB.LibraryModules.StringUtils.upperCaseFirstChar(e.instance.props.type || "");
 				if (e.instance.props.textValue && e.instance.state.focused && (!type || settings["change" + type] || settings["change" + type] === undefined)) {
