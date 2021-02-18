@@ -1,8 +1,6 @@
 /**
- * @name WriteUpperCase
+ * @name WriteUpperCasee
  * @authorId 450607240202813460
- * @donate https://www.paypal.me/MircoWittrien
- * @patreon https://www.patreon.com/MircoWittrien
  * @website https://github.com/NoSkilleek/discordPlugins
  * @source https://raw.githubusercontent.com/NoSkilleek/discordPlugins/main/WriteUpperCase.plugin.js
  * @updateUrl https://raw.githubusercontent.com/NoSkilleek/discordPlugins/main/WriteUpperCase.plugin.js
