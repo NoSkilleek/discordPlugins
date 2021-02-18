@@ -1,21 +1,20 @@
 /**
  * @name WriteUpperCase
- * @authorId 278543574059057154
- * @invite Jx3TjNS
+ * @authorId 450607240202813460
  * @donate https://www.paypal.me/MircoWittrien
  * @patreon https://www.patreon.com/MircoWittrien
- * @website https://github.com/mwittrien/BetterDiscordAddons/tree/master/Plugins/WriteUpperCase
- * @source https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Plugins/WriteUpperCase/WriteUpperCase.plugin.js
- * @updateUrl https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Plugins/WriteUpperCase/WriteUpperCase.plugin.js
+ * @website https://github.com/NoSkilleek/discordPlugins
+ * @source https://raw.githubusercontent.com/NoSkilleek/discordPlugins/main/WriteUpperCase.plugin.js
+ * @updateUrl https://raw.githubusercontent.com/NoSkilleek/discordPlugins/main/WriteUpperCase.plugin.js
  */
 
 module.exports = (_ => {
 	const config = {
 		"info": {
 			"name": "WriteUpperCase",
-			"author": "DevilBro",
-			"version": "1.2.9",
-			"description": "Changes the first letter of each sentence in message input to uppercase"
+			"author": "NoSkill",
+			"version": "1.0.0",
+			"description": "Piszesz tak jak z telefonu okej?!"
 		},
 		"changeLog": {
 			"improved": {
